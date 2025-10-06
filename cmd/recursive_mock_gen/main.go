@@ -80,6 +80,11 @@ func action(c *cli.Context) error {
 		}
 	}
 
+	// キャッシュファイルの保存
+	if err := cacheRepo.WriteCache(cacheFilePath, newEntries); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -111,6 +116,7 @@ func runMockGen(ctx context.Context, e models.Entry, outputBasePath string) erro
 	cmd := exec.CommandContext(
 		ctx,
 		"mockgen",
+		"-source", e.FilePath,
 		"-destination", e.OutFilePath(outputBasePath),
 		"-package", e.OutPackageName(),
 	)

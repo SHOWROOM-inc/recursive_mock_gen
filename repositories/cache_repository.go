@@ -8,7 +8,7 @@ import (
 
 type CacheRepository interface {
 	ReadCache(cacheFilePath string) (models.Cache, error)
-	WriteCache(cacheFilePath string, m *models.Cache) error
+	WriteCache(cacheFilePath string, m models.Cache) error
 }
 
 func NewCacheRepository() CacheRepository {
@@ -32,7 +32,7 @@ func (r *cacheRepository) ReadCache(cacheFilePath string) (models.Cache, error) 
 	return m, nil
 }
 
-func (r *cacheRepository) WriteCache(cacheFilePath string, m *models.Cache) error {
+func (r *cacheRepository) WriteCache(cacheFilePath string, m models.Cache) error {
 	b, err := json.MarshalIndent(m, "", "  ")
 	if err != nil {
 		return err
