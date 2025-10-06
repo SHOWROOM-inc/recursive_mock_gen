@@ -1,0 +1,16 @@
+{
+  "repositories.CacheRepository": {
+    "pkg_path": "github.com/SHOWROOM-inc/recursive_mock_gen/repositories",
+    "pkg_name": "repositories",
+    "interface_name": "CacheRepository",
+    "file_path": "repositories/cache_repository.go",
+    "hash": "72c6ce9a2e5797238b65ca605b06b3ed"
+  },
+  "repositories.CodeRepository": {
+    "pkg_path": "github.com/SHOWROOM-inc/recursive_mock_gen/repositories",
+    "pkg_name": "repositories",
+    "interface_name": "CodeRepository",
+    "file_path": "repositories/code_repository.go",
+    "hash": "c483f512c408975cc95fda2e25e07156"
+  }
+}
