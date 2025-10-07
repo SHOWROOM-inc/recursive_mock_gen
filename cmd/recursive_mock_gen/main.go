@@ -122,6 +122,6 @@ func runMockGen(ctx context.Context, e models.Entry, outputBasePath string) erro
 	)
 	cmd.Stdout = os.Stdout
 	cmd.Stdin = os.Stdin
-	fmt.Println("mockgen for ", e.PkgPath)
+	fmt.Println("mockgen for ", e.FilePath)
 	return cmd.Run()
 }
