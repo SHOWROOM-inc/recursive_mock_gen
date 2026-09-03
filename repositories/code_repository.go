@@ -28,7 +28,8 @@ type codeRepository struct {
 func (r *codeRepository) LoadInterfaces(rootDir string) (models.Cache, error) {
 	cfg := &packages.Config{
 		Mode: packages.NeedName | packages.NeedFiles | packages.NeedCompiledGoFiles |
-			packages.NeedTypes | packages.NeedTypesInfo | packages.NeedSyntax,
+			packages.NeedTypes | packages.NeedTypesInfo | packages.NeedSyntax |
+			packages.NeedImports | packages.NeedDeps,
 		Dir: rootDir,
 	}
 	pkgs, err := packages.Load(cfg, "./...")
